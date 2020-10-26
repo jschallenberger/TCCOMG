@@ -1,0 +1,5 @@
+user -> Login/logout/cadastro/cadastrar novo jogo/deletar/listar jogos
+
+jogos
+
+infojogos
