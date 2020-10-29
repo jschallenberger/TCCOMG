@@ -9,6 +9,9 @@ exports.up = function(knex) {
     table.string('uf', 2).notNullable();
     table.string('endereco').notNullable();
     table.string('horario').notNullable();
+    table.string('descricao').notNullable();
+    table.string('date').notNullable();
+
 
     table.string('user_id').notNullable();
 

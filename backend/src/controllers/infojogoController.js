@@ -20,10 +20,11 @@ module.exports = {
   },
 
   async create (req, res){
-    const { esporte, modalidade, idademin, idademax, cidade, uf, endereco, horario } = req.body;
+    const { esporte, modalidade, idademin, idademax, cidade, uf, endereco, horario, descricao, date } = req.body;
     const user_id = req.headers.authorization;
-
-    const [jogo_id] = await connection('infojogo').insert({
+ 
+    try {
+      const [jogo_id] = await connection('infojogo').insert({
       esporte, 
       modalidade, 
       idademin, 
@@ -32,10 +33,11 @@ module.exports = {
       uf, 
       endereco, 
       horario,
+      descricao,
+      date,
       user_id
     });
     
-
     const candidatura = 'X';
     await connection('jogadores').insert({
       candidatura,
@@ -43,7 +45,10 @@ module.exports = {
       jogo_id
     });
 
-    return res.json({ jogo_id });
+    return res.json({ jogo_id });  
+    } catch (error) {
+      return res.status(400).json({error: "Tente novamente"});
+    }
   },
 
   async delete (req, res){
