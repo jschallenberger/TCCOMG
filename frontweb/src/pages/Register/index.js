@@ -10,7 +10,7 @@ export default function Register(){
   const [name, setName] = useState('');
   const [email,setEmail] = useState('');
   const [senha,setSenha] = useState('');
-  const [idade,setIdade] = useState(0);
+  const [idade,setIdade] = useState();
   const [genero,setGenero] = useState('');
 
   const history = useHistory();

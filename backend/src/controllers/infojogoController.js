@@ -2,7 +2,6 @@ const connection = require('../database/connection');
 
 module.exports = {
   async list (req, res){
-    const { page = 1 } = req.query;
 
     const [count] = await connection('infojogo').count();
 
@@ -12,8 +11,6 @@ module.exports = {
     
     const infoJogos = await connection('infojogo')
     .join('usuarios', 'usuarios.id', '=', 'infojogo.user_id')
-    .limit(5)
-    .offset((page -1) * 5)
     .select(['infojogo.*', 'usuarios.name', 'usuarios.email', 'usuarios.genero', 'usuarios.idade']);
   
     return res.json(infoJogos);

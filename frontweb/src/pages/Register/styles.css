@@ -58,3 +58,32 @@ form .input-group input + input{
 form .input-group select + input{
   margin-left: 8px;
 }
+
+@media (max-width: 1000px){
+  
+  .register-container .content{
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .register-container section{
+    order: 0;
+    width: 40%;
+    height: fit-content;
+  }
+  
+  .register-container section p{
+    display: none;
+  }
+
+  .register-container .link{
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .register-container img{
+    display: none;
+  }
+  
+}

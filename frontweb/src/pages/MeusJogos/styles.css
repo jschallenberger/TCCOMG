@@ -1,6 +1,6 @@
 .meusjogos-container{
   width: 100%;
-  max-width: 1180px;
+  /* max-width: 1180px; */
   padding: 0 30px;
   margin: 32px auto;
 }
@@ -24,7 +24,8 @@
   background: #fff;
   padding: 24px;
   border-radius: 8px;
-  position: relative;
+  /* position: relative; */
+  justify-content: space-between;
 }
 
 .meusjogos-container .button1{
@@ -35,6 +36,7 @@
   height: fit-content;
   border-radius: 8px;
   margin-bottom: 8px;
+  text-decoration: none;
   /* position: absolute;
   bottom: 24px;
   right: 24px; */
@@ -116,4 +118,21 @@
 
 p + p + p {
   margin-top: 10px;
+}
+
+@media (max-width: 1000px){
+  
+  .meusjogos-container ul{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .meusjogos-container .group2{
+    margin-left: 10px;
+  }
+
+  .meusjogos-container .group3{
+    margin-left: 10px;
+  }
+  
 }

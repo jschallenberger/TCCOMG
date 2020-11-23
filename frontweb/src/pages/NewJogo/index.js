@@ -8,8 +8,8 @@ export default function NewJogo(){
   const [esporte, setEsporte] = useState();
   const [modalidade, setModalidade] = useState();
   const [descricao, setDescricao] = useState();
-  const [idademin, setIdadeMin] = useState(0);
-  const [idademax, setIdadeMax] = useState(0);
+  const [idademin, setIdadeMin] = useState();
+  const [idademax, setIdadeMax] = useState();
   const [cidade, setCidade] = useState();
   const [uf, setUF] = useState();
   const [endereco, setEndereco] = useState();
@@ -46,11 +46,11 @@ async function handleNewJogo(e){
 }
 
   return(
-    <div className="register-container">
+    <div className="newjogo-container">
       <h1>Criar Jogo</h1>
       <div className="content">
 
-        <section>
+        <section className="newjogo">
             <select value={esporte} onChange={e=>setEsporte(e.target.value)} 
             required name="esporte" id="esporte">
             <option value="" disabled selected>Esporte</option>
@@ -78,14 +78,14 @@ async function handleNewJogo(e){
         </Link>
         </section>
 
-        <form onSubmit={handleNewJogo} >
+        <form onSubmit={handleNewJogo}  className="newjogo">
 
             <div className="input-group">
               <input type='number' value={idademin} onChange={e=>setIdadeMin(e.target.value)} 
-              placeholder="Idade Mínima" style={{width: 200}}/>
+              placeholder="Idade Mínima" />
               <span>à</span>
               <input type='number' value={idademax} onChange={e=>setIdadeMax(e.target.value)}
-              placeholder="Idade Máxima" style={{width: 200}}/>
+              placeholder="Idade Máxima"/>
             </div>
 
           <div className="input-group">

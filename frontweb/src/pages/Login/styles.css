@@ -55,3 +55,19 @@
 .link:hover{
   opacity: 0.8;
 }
+
+@media (max-width: 1000px){
+  
+  .login-container{
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .login-container .landing{
+    order: 1;
+    width: 40%;
+    height: fit-content;
+    margin-top: 10px;
+  }
+  
+}

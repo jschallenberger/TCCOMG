@@ -14,6 +14,7 @@ module.exports = {
 
     const id = crypto.randomBytes(4).toString('HEX');
   
+    try{
     await connection('usuarios').insert({
       id,
       name,
@@ -24,5 +25,8 @@ module.exports = {
     })
 
     return res.json({id});
+    }catch(err){
+      return res.status(400).json({error: "Tente novamente"});
+    }
   }
 }

@@ -26,7 +26,7 @@ height: 50px;
 }
 
 .header-container header a{
-  width: max-content;
+  /* width: max-content; */
   padding: 0 20px;
   margin-left: auto;
   margin-top: 0;
@@ -40,6 +40,7 @@ height: 50px;
   background: transparent;
   margin-left: 16px;
   transition: border-color 0.2s;
+  min-width: 64px;
 }
 
 .header-container header button:hover{
@@ -49,4 +50,68 @@ border-color: #999;
   display: flex;
   flex-direction: column;
   text-decoration: none;
+}
+
+.button2{
+  width: 100%;
+  height: 50px;
+  background: #99a19b;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 50px;
+  transition: filter 0.2s;
+  margin-right: 16px;
+}
+
+.button2:hover{
+  filter: brightness(90%);
+}
+
+.button3{
+  width: 100%;
+  height: 50px;
+  background:  #99a19b;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 50px;
+  transition: filter 0.2s;
+  margin-right: 16px;
+}
+
+.button3:hover{
+  filter: brightness(90%);
+}
+
+.buttons{
+  margin-left: auto;
+}
+
+.header-container header .buttons span{
+  margin-left: 0;
+  min-width: 0;
+}
+
+@media (max-width: 1000px){
+  .header-container header span {
+    font-size: 20px;
+  }
+
+  .header-container {
+    font-size: 20px;
+    padding: 10px;
+  }
 }

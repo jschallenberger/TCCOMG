@@ -1,9 +1,9 @@
 import './styles.css'
 import Header from '../../components/Header'
-import { FiMessageCircle } from 'react-icons/fi'
+import { FiMessageCircle, FiAward } from 'react-icons/fi'
 import { useEffect, useState } from 'react'
 import api from '../../services/api'
-
+import { Link } from 'react-router-dom'
 
 
 export default function MeusJogos(){
@@ -21,6 +21,7 @@ export default function MeusJogos(){
   },[userId]);
 
   async function handleDeleteJogo(id){
+    
     try {
       await api.delete(`infojogo/${id}`, {
         headers:{
@@ -57,15 +58,30 @@ export default function MeusJogos(){
              <div className="group2">
               <strong>MODALIDADE:</strong>
               <p>{jogo.modalidade}</p>
+              <strong>DATA:</strong>
+              <p>{jogo.date}</p>
               <strong>HORÁRIO:</strong>
               <p>{jogo.horario}</p>
              </div>
      
              <div className="group3">
-              <button onClick={()=> handleDeleteJogo(jogo.id)} className="button1">Detalhes</button>  
-              <button type="button">
-                <FiMessageCircle size={20} color="#249c44" />
-              </button>
+              <Link to={{
+              pathname: "/detalhes",
+              state: jogo // your data array of objects
+              }} className="button1">Detalhes</Link> 
+               
+              <Link to={{
+              pathname: '/chat',
+              state: jogo
+              }}>
+                <button type="button">
+                  <FiMessageCircle size={20} color="#249c44" />
+                </button>
+              </Link>
+
+              {jogo.user_id === userId 
+                ? <FiAward className='lider' size={40} color="#249c44" />
+              :null}
             </div>
 
            </li>

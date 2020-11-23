@@ -3,6 +3,7 @@ const usuariosController = require('./controllers/usuariosController');
 const infojogoController = require('./controllers/infojogoController');
 const jogadoresController = require('./controllers/jogadoresController');
 const sessionController = require('./controllers/sessionController');
+const chatController = require('./controllers/chatController');
 
 const routes = express.Router();
 
@@ -20,8 +21,12 @@ routes.delete('/infojogo/:id', infojogoController.delete);
 
 routes.get('/jogadores/:jogo_id', jogadoresController.list);
 routes.get('/jogos', jogadoresController.listByUser);
+
 routes.post('/jogadores', jogadoresController.create);
 routes.post('/jogadores/acceptCandidature', jogadoresController.acceptCandidature);
+routes.delete('/jogadores/', jogadoresController.delete);
+
+routes.get('/chat/:jogo_id', chatController.list);
 
 
 
